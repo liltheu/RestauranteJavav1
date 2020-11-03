@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <head>
+	<title>Home</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="stylesheet" type="text/css" href="css\stylehome.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css\stylehome.css" media="media (max-width: 960px) and (min-width: 640px)" />
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <div class="navbar" >
+    <img src="imgs/logoapsfood.png"  width="100" height="40" />	
+    <ul class="nav navbar-expand-md justify-content-end">
+      <li class="nav-item nav-link:hover">
+        <a class="nav-link" href="homePage.xhtml">INICIO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contato.html">CONTATO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sobrenos.html">SOBRE NOS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="loginecadastropage.xhtml" >LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="inicio">
+      <div class="titulo">
+          <h2 class="title">Bem Vindo ao <h2 class="title red"> APSFood, </h2></h2><h:outputText  value="#{usuarioManagedBean.usuariotb.usuario}" style="font-size: 2.2rem; width:20%;"></h:outputText>
+        <h3 class="title3"> caso queira prosseguir e fazer um pedido clique no botão iniciar para iniciar o seu pedido.</h3>
+      </div>
+      <button type="button" class="btn btn-danger" id="botao1">INICIAR</button>
+    </div>
+    <div class="pedido1 container">
+      <div class="row">
+        <div class="col"></div>
+        <h2 class="title2 col-5">     CARDÁPIO</h2>
+        <div class="col"></div>
+      </div>
+      <div class="row">
+        <picture class="rouded">
+          <img src="imgs/hamburguer.png" class="hamburguer" width="200" height="200" id="imghamburguer"/>
+          <figcaption class="legendahamburguer">Hamburguer</figcaption>
+        </picture>
+      </div>
+      <div class="setaback">
+        <img src="imgs/setaback.png" width="100" height="100" class="setabackimg" id="setaback1"/>
+      </div>
+    </div>
+    <div class="pedido2 container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card margin-top" style="width: 10rem;">
+            <img class="card-img-top" src="imgs/pao.png" alt="Card image cap"/>
+            <div class="card-body">
+              <h5 class="card-title">Pão</h5>
+              <a href="#" id="maispao">+</a>
+              <a href="#" id="menospao">-</a>
+            </div>
+            <div class="card margin-top" style="width: 10rem;">
+              <img class="card-img-top" src="imgs/carne.png" alt="Card image cap"/>
+              <div class="card-body">
+                <h5 class="card-title">Carne</h5>
+                <a href="#" id="maiscarne" >+</a>
+                <a href="#"  id="menoscarne">-</a>
+              </div>
+              <div class="card margin-top" style="width: 10rem;">
+                <img class="card-img-top" src="imgs/alface.png" alt="Card image cap"/>
+                <div class="card-body">
+                  <h5 class="card-title">Salada</h5>
+                  <a href="#" id="maissalada">+</a>
+                  <a href="#" id="menossalada">                 -</a>
+                </div>
+                <div class="card margin-top" style="width: 10rem;">
+                  <img class="card-img-top" src="imgs/molho.png" alt="Card image cap"/>
+                  <div class="card-body">
+                    <h5 class="card-title">Molho</h5>
+                    <a href="#" id="maismolho">+</a>
+                    <a href="#" id="menosmolho">                 -</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card margin-top" style="width: 45rem;">
+            <h2 class="card-title">Pedido</h2>
+            <div class="card-body info">      
+                <h:form >
+                    <h:outputLabel value="Pao" for="pao" />
+                    <h:inputText a:id="pao" a:readonly="true" value="#{pedidoManagedBean.pedidotb.pao}"/>
+                    <h:outputLabel value="Carne" for="carne" />
+                    <h:inputText a:id="carne" a:readonly="true" value="#{pedidoManagedBean.pedidotb.carne}"/>
+                    <h:outputLabel value="Salada" for="salada" />
+                    <h:inputText a:id="salada" a:readonly="true" value="#{pedidoManagedBean.pedidotb.salada}"/>
+                    <h:outputLabel value="Molho" for="molho" />
+                    <h:inputText a:id="molho" a:readonly="true" value="#{pedidoManagedBean.pedidotb.molho}"/>
+                <h5 class="pagamento">TOTAL:</h5>
+                <h:inputText a:id="valor" a:readonly="true" value="#{pedidoManagedBean.pedidotb.preco}"/>
+                <button type="button" class="btn btn-danger" id="Pagamentotexto">Ir para o Pagamento</button>
+                
+                </h:form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card margin-top final" style="width: 8rem;">
+            <div class="card-body">
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="imgs/setaback.png" width="100" height="100" class="setabackimg" id="setaback2"/>
+    </div>
+    <div class="pedido3 container">
+      <div class="col">
+        
+      </div>
+      <div class="col-5">
+        <div class="card" style="width: 25rem;">
+          <div class="card-body">
+            <h5 class="card-title">PAGAMENTO</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Insira os dados de Pagamento</h6>
+                         <h6 class="card-subtitle mb-2 text-muted">Informações do pedido:</h6>
+            <label class="form-control" id="descricao"  a:type="text" value="" a:readonly="readonly"/>
+            <h:form>
+                <h:inputHidden a:id ="pegapao" value="#{pedidoManagedBean.pedidotb.pao}" />
+                <h:inputHidden a:id ="pegacarne" value="#{pedidoManagedBean.pedidotb.carne}" />
+                <h:inputHidden a:id ="pegasalada" value="#{pedidoManagedBean.pedidotb.salada}" />
+                <h:inputHidden a:id ="pegamolho" value="#{pedidoManagedBean.pedidotb.molho}" />
+                <h:outputLabel value="NUMERO DO CARTÃO" for="numerocartao"/>
+                <div class="form-group">
+                    <h:inputText a:type="numeric" class="form-control" id="numerocartao" value="#{pedidoManagedBean.pedidotb.NCartao}" />
+                </div>
+                <div class="form-group">
+                    <h:outputLabel value="DD/AA" for="datacartao"/>
+                    <h:inputText  a:type="numeric" class="form-control" id="datacartao" value="#{pedidoManagedBean.pedidotb.dataCartao}" />
+                    <h:outputLabel value="CCV" for="ccv"/>
+                    <h:inputText a:type="numeric"  class="form-control" id="ccv" value="#{pedidoManagedBean.pedidotb.ccv}"/>
+                    <br/> 
+                    <h6 class="card-subtitle mb-2 text-muted">TOTAL:</h6>
+                    <h:inputText  a:id="totalvalor1"  a:readonly="readonly" value="#{pedidoManagedBean.pedidotb.preco}"/>
+                </div>
+                <h:commandButton id="finaliza" action="#{pedidoManagedBean.Salvar()}" value="Finalizar Pedido" class="btn btn-outline-danger"/>
+            </h:form>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+  </div>
+  <div class="rodape">
+    <!-- Footer -->
+    <footer class="page-footer footer-expand-md font-small red pt-4">
+
+      <!-- Footer Links -->
+      <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+         <div class="col-md-2 mt-md-0 mt-3">
+          <img src="imgs/logoapsfoodred.png" width="100" height="40"/>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase">APS Food</h5>
+          <p>Copyright 2020 - APSFood - Todos os direitos reservados APSFood com Agência de Restaurantes</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3"/>
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="homePage.xhtml">Inicio</a>
+            </li>
+            <li>
+              <a href="loginecadastropage.xhtml">Logout</a>
+            </li>
+            <li>
+              <a href="#!">Sobre Nos</a>
+            </li>
+            <li>
+              <a href="#!">Contato</a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">APSFood© 2020 Copyright:
+
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $(".container .pedido1").hide();
+    $(".container .pedido2").hide();
+    $(".container .inicio").show();
+    $(".container .pedido3").hide();
+    function exibirDiv1(){
+      $(".container .pedido1").show();
+      $(".container .inicio").hide();
+      $(".container .pedido2").hide();
+      $(".container .pedido3").hide();
+    }
+    function exibirDiv2(){
+      $(".container .pedido1").hide();
+      $(".container .inicio").show();
+      $(".container .pedido2").hide();
+      $(".container .pedido3").hide();
+    }
+    function exibirDiv3(){
+      $(".container .pedido1").hide();
+      $(".container .inicio").hide();
+      $(".container .pedido2").show();
+      $(".container .pedido3").hide();
+    }
+    function exibirDiv4(){
+      $(".container .pedido1").hide();
+      $(".container .inicio").hide();
+      $(".container .pedido2").hide();
+      $(".container .pedido3").show();
+         descricao.innerHTML = "Pao: "+paonumero.value+" Carne: "+carnenumero.value+" Salada: "+saladanumero.value+" Molho"+ molhonumero.value;
+         totalvalor1.value = textovalor.value;
+         pegapao.value = paonumero.value;
+         pegacarne.value = carnenumero.value;
+         pegasalada.value = saladanumero.value;
+         pegamolho.value = molhonumero.value;
+    
+    }
+    function paomais(){
+      pao = pao +1;  
+      valor = valor + valorpao;
+      paonumero.value = pao;  
+      textovalor.value = valor;
+ 
+    }
+    function paomenos(){
+       if(pao > 0){
+            pao = pao -1;
+            valor = valor - valorpao;
+            paonumero.value = pao;
+            textovalor.value = valor;
+       }else{
+           pao = 0;
+            paonumero.value = pao;
+       }
+    }
+    function maiscarne(){
+      carne = carne +1;
+      valor = valor + valorcarne;
+      carnenumero.value = carne;
+      textovalor.value = valor;
+    }
+    function menoscarne(){
+       if(carne > 0){
+            carne = carne -1;
+            valor = valor - valorcarne;
+            carnenumero.value = carne;
+            textovalor.value = valor;
+       }else{
+            carne = 0;
+            carnenumero.value = carne;
+       }
+    }
+    function maissalada(){
+      salada = salada +1;
+      valor = valor + valorsalada;
+      saladanumero.value = salada;
+      textovalor.value = valor;
+    }
+    function menossalada(){
+       if(salada > 0){
+            salada = salada -1;
+            valor = valor - valorsalada;
+            saladanumero.value = salada;
+            textovalor.value = valor;
+       }else{
+           pao = 0;
+            saladanumero.value = salada;
+       }
+    }
+        function maismolho(){
+      molho = molho +1;
+      valor = valor + valormolho;
+      molhonumero.value = molho;
+      textovalor.value = valor;
+    }
+    function menosmolho(){
+       if(molho > 0){
+            molho = molho -1;
+            valor = valor - valormolho;
+            molhonumero.value = molho; 
+            textovalor.value = valor;
+       }else{
+           molho = 0;
+            molhonumero.value = molho;
+       }
+    }
+    
+    var btn = document.getElementById("botao1");
+    btn.addEventListener("click", exibirDiv1);
+
+    var btn2 = document.getElementById("setaback1");
+    btn2.addEventListener("click", exibirDiv2);
+
+    var btn3 = document.getElementById("imghamburguer");
+    btn3.addEventListener("click", exibirDiv3);
+
+    var btn4 = document.getElementById("setaback2");
+    btn4.addEventListener("click",exibirDiv1);
+    
+    var btn5 = document.getElementById("Pagamentotexto");
+    btn5.addEventListener("click",exibirDiv4);
+    
+    var btnpaomais = document.getElementById("maispao");
+    var btnpaomenos = document.getElementById("menospao");
+    var btnpaomais1 = document.getElementById("maiscarne");
+    var btnpaomenos1 = document.getElementById("menoscarne");
+    var btnpaomais2 = document.getElementById("maissalada");
+    var btnpaomenos2 = document.getElementById("menossalada");
+    var btnpaomais3 = document.getElementById("maismolho");
+    var btnpaomenos3 = document.getElementById("menosmolho");  
+    var textovalor = document.getElementById("valor");
+    var descricao = document.getElementById("descricao");
+    var totalvalor1 = document.getElementById("totalvalor1");
+    var pegapao = document.getElementById("pegapao");
+    var pegacarne = document.getElementById("pegacarne");
+    var pegasalada = document.getElementById("pegasalada");
+    var pegamolho = document.getElementById("pegamolho");
+
+   
+ 
+    var paonumero = document.getElementById("pao");
+    var carnenumero = document.getElementById("carne");
+    var saladanumero = document.getElementById("salada");
+    var molhonumero = document.getElementById("molho");
+    
+    var valor = 0.00;
+     
+    var pao = 0;
+    var carne = 0;
+    var salada = 0;
+    var molho = 0;
+    var valorpao = 10.00;
+    var valorcarne = 25.00;
+    var valorsalada = 15.00;
+    var valormolho = 5.00; 
+    
+    
+    btnpaomais.addEventListener("click", paomais);
+    btnpaomenos.addEventListener("click", paomenos);
+    btnpaomais1.addEventListener("click", maiscarne);
+    btnpaomenos1.addEventListener("click", menoscarne);
+    btnpaomais2.addEventListener("click", maissalada);
+    btnpaomenos2.addEventListener("click", menossalada);
+    btnpaomais3.addEventListener("click", maismolho);
+    btnpaomenos3.addEventListener("click", menosmolho);
+  });
+</script>
+</body>
+</html>
