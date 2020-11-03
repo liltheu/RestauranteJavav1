@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Login e Registro</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" type="text/css" href="css\style.css"></link>
+	<script type="text/javascript" scr="js\app.js"></script>
+	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        </meta>
+        </meta>
+    </h:head>
+    <body>
+        	<div class="container">
+		<div class="forms-container">
+			<div class="signin-signup">
+				<h:form class="sign-in-form">
+                                    <p:messages id="loginmessage"  />             
+					<h2 class="title">Entrar</h2>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+                                                <h:inputText a:type="text" value="#{usuarioManagedBean.usuariotb.usuario}" a:placeholder="Usuario"/>
+					</div>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+                                                <h:inputText a:type="password" value="#{usuarioManagedBean.usuariotb.senha}" a:placeholder="Senha"/>
+					</div>
+                                        <h:commandButton id="login" action="#{usuarioManagedBean.Login()}" value="Login" class="btn btn-outline-danger" onclick="setTimeout(function() { $('[id$=loginmessage]').hide(100); }, 200);"/>
+
+					<p class="social-text">Faça login com as redes sociais</p>
+					<div class="social-media">
+						<a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</h:form>
+
+                           <p:dialog widgetVar="abrirDialog"> 
+                           
+                           </p:dialog>
+				<h:form  class="sign-up-form">
+					<h2 class="title">Registrar-se</h2>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+                                                <h:inputText a:type="text"  value="#{usuarioManagedBean.usuariotb.usuario}" a:placeholder="Usuario"/>
+					</div>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+                                                 <h:inputText a:type="password"  value="#{usuarioManagedBean.usuariotb.senha}" a:placeholder="Senha"/>
+					</div>
+                                        <div class="input-field">
+						<i class="fas fa-user"></i>
+                                                 <h:inputText a:type="text" value="#{usuarioManagedBean.usuariotb.nome}" a:placeholder="Nome"/>
+					</div>
+                                        <div class="input-field">
+						<i class="fas fa-user"></i>
+                                                 <h:inputText a:type="number" value="#{usuarioManagedBean.usuariotb.cpf}" a:placeholder="CPF"/>
+					</div>
+                                        <div class="input-field">
+						<i class="fas fa-user"></i>
+                                                 <h:inputText a:type="number" value="#{usuarioManagedBean.usuariotb.cep}" a:placeholder="CEP"/>
+					</div>
+                                         <h:commandButton id="salvar" value="Salvar" class="btn btn-outline-danger" action="#{usuarioManagedBean.Salvar()}"/>
+
+					<p class="social-text">Registra-se com as redes sociais</p>
+					<div class="social-media">
+						<a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</h:form>
+			</div>	
+		</div>
+                
+
+
+		<div class="panels-container">
+			<div class="panel left-panel">
+				<div class="content">
+					<h3>Novo aqui?</h3>
+					<p>
+						Junta-se a nós cadastrando-se aqui.
+					</p>
+					<button class="btn transparent" id="sign-up-btn" >
+						Registrar-se
+					</button>
+				</div>
+                            <img src="imgs\imagelogin.png" class="image" alt=""></img>
+			</div>
+
+			<div class="panel right-panel">
+				<div class="content">
+					<h3>Um de Nós?</h3>
+					<button class="btn transparent" id="sign-in-btn">
+						Logar-se
+					</button>
+				</div>
+
+                            <img src="imgs\imageregister.png" class="image" alt=""></img>
+			</div>
+		</div>
+                </div>
+
+
+
+
+		<script>
+			const sign_in_btn = document.querySelector("#sign-in-btn");
+			const sign_up_btn = document.querySelector("#sign-up-btn");
+			const container = document.querySelector(".container");
+
+			sign_up_btn.addEventListener("click", () => {
+				container.classList.add("sign-up-mode");
+			});
+
+			sign_in_btn.addEventListener("click", () => {
+				container.classList.remove("sign-up-mode");
+			});
+		</script>
+                
+
+    </body>
+</html>
+

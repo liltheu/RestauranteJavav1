@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.h:outputText{
+    	font-size: 2.2rem;
+  	color: #444;
+  	display: inline;
+  	width: 20%;
+}
+html{
+	height: 100%;
+	min-height: 100%;
+}
+body,
+input {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+}
+
+.container.inicio{
+	width: 100%;
+	height: 100%;
+	margin-top: 50%;
+	margin-left: 50%;
+}
+.titulo{
+	margin-top: 20%;
+
+}
+.title.red{
+	color: red;
+	display: inline;
+
+
+
+}
+
+.title{
+	font-size: 2.2rem;
+  	color: #444;
+  	display: inline;
+  	width: 20%;
+}
+
+.btn{
+  width: 150px;
+  background-color: red;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 50%;
+  margin-top: 20%;
+
+}
+
+.btn:hover{
+  background-color: red;
+}
+
+.navbar{
+	background-color: red;
+}
+
+.nav.justify-content-end li a{
+	color : white ;
+	text-decoration: none;
+	  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Poppins Medium'), local('Poppins-Medium'), url(https://fonts.gstatic.com/s/poppins/v13/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.rodape{
+	border-top: 5px solid gray;
+	background-color: none;
+	margin-top: auto;
+}
+
+.navbar li.nav-item{
+		max-width: 960px;
+
+}
+.title2{
+	margin-left: 43%;
+}
+.pedido1{
+	margin-top: 10%;
+}
+.rouded{
+	position: absolute;
+	box-shadow: 0 0 2px rgba(0,0,0,0.1);
+	margin-left: 50%;
+	margin-top: 10%;
+	transition: transform 1s;
+    transform: translateX(0) scale(0.8);
+}
+.rouded:hover,.rouded:focus{
+  box-shadow:0 0 8px 8px #666;
+  transform: translateY(10px) scale(1);
+
+}
+.legendahamburguer{
+	margin-left: 25%;
+}
+.setaback{
+	margin-top: 30%;
+}
+.setabackimg{
+		transition: transform 1s;
+    transform: translateX(0) scale(0.8);
+}
+.setabackimg:hover,.setabackimg:focus{
+  transform: translateY(10px) scale(1);
+}
+.card.margin-top{
+	margin-top: 5%;
+}
+.botaomaisemenos{
+	display: inline-block;
+}
+.card-body a{
+	margin-left: 25%;
+	display: inline-block;
+	font-size: 2rem;
+}
+.card-body.info a{
+	margin-left: 15%;
+	display: inline-block;
+	font-size: 2rem;
+}
+
+.card.margin-top.final{
+	margin-top: 600%;
+	border: none;
+}
+
+.card.margin-top.final a{
+	width: max-content;
+	font-size: 15px;
+}
+.formpagamentotexto h5{
+    display: inline-block;
+}
+.card.center{
+	display: initial;
+	margin-left: 50%;
+}
+.card.sobrenos h5{
+	color: red;
+}
+.card.sobrenos{
+	margin-top: 20%;
+}
+@media (max-width: 960px) and (min-width: 640px){
+	.navbar{
+	width: auto;
+}
+	.nav-navbar-expand-md-justify-content-end{
+		width: auto;
+	}
+	.btn{
+		margin-bottom: 50%;
+	}
+}

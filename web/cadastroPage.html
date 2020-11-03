@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+	<title>Login & Registro</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css\style.css">
+	<script type="text/javascript" scr="js\app.js"></script>
+	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="forms-container">
+			<div class="signin-signup">
+				<form action="" class="sign-in-form">
+					<h2 class="title">Entrar</h2>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+						<input type="text" placeholder="Usuario">
+					</div>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+						<input type="password" placeholder="Senha">
+					</div>
+					<input type="submit" value="Login" class="btn btn-outline-danger">
+
+					<p class="social-text">Faça login com as redes sociais</p>
+					<div class="social-media">
+						<a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</form>
+
+				<form action="" class="sign-up-form">
+					<h2 class="title">Registrar-se</h2>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+						<input type="text" value="#{usuarioManagedBean.usuario.usuario}" placeholder="Usuario">
+					</div>
+					<div class="input-field">
+						<i class="fas fa-user"></i>
+                                                <input type="password" value="#{usuarioManagedBean.usuario.senha}" placeholder="Senha">
+					</div>
+					<input type="submit" value="Registrar-se" class="btn btn-outline-danger" formaction="#{usuarioManagedBean.Salvar()}">
+
+					<p class="social-text">Registra-se com as redes sociais</p>
+					<div class="social-media">
+						<a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+						<a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+					</div>
+				</form>
+			</div>	
+		</div>
+
+
+		<div class="panels-container">
+			<div class="panel left-panel">
+				<div class="content">
+					<h3>Novo aqui?</h3>
+					<p>
+						Junta-se a nós cadastrando-se aqui.
+					</p>
+					<button class="btn transparent" id="sign-up-btn">
+						Registrar-se
+					</button>
+				</div>
+				<img src="imgs\imagelogin.png" class="image" alt="">
+			</div>
+
+			<div class="panel right-panel">
+				<div class="content">
+					<h3>Um de Nós?</h3>
+					<button class="btn transparent" id="sign-in-btn">
+						Logar-se
+					</button>
+				</div>
+
+				<img src="imgs\imageregister.png" class="image" alt="">
+			</div>
+		</div>
+
+
+
+
+
+		<script>
+			const sign_in_btn = document.querySelector("#sign-in-btn");
+			const sign_up_btn = document.querySelector("#sign-up-btn");
+			const container = document.querySelector(".container");
+
+			sign_up_btn.addEventListener("click", () => {
+				container.classList.add("sign-up-mode");
+			});
+
+			sign_in_btn.addEventListener("click", () => {
+				container.classList.remove("sign-up-mode");
+			});
+		</script>
+
+
+
+	</body>
+	</html>
